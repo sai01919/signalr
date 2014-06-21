@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/themes/base/jquery.ui.all.css")" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/Scripts/jquery-1.6.4.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery-ui-1.8.17.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/modernizr-1.7.js")" type="text/javascript"></script>
+    @RenderSection("header", false)
+</head>
+<body>
+    <div class="page">
+        <header>
+            <div id="title">
+                <h1>SignalR</h1>
+            </div>
+            <div id="logindisplay">
+                @Html.Partial("_LogOnPartial")
+            </div>
+            <nav>
+                <ul id="menu">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Chat-1", "Index", "Page1")</li>
+                   @*<li>@Html.ActionLink("Chat-2", "Index", "Page2")</li>
+                    <li>@Html.ActionLink("MultiHub", "Index", "Page3")</li>
+                    <li>@Html.ActionLink("ProgressBar", "Index", "Page4")</li>
+                    <li>@Html.ActionLink("ExternalService", "Index", "Page5")</li>
+                    <li>@Html.ActionLink("PersistentConnection", "Index", "Page6")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>*@
+                </ul>
+            </nav>
+        </header>
+        <section id="main">
+            @RenderBody()
+        </section>
+        <footer>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "Page5";
+}
+
+@section header{
+    <script src="@Url.Content("~/Scripts/jquery.signalR-0.5.3.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/signalr/hubs")" type="text/javascript"></script>    
+    <script src="@Url.Content("~/Scripts/zApplication5.js")" type="text/javascript"></script>
+}
+
+<h2>ExternalService</h2>
+
+<div>
+  @Ajax.ActionLink("Show message (by action method)", "Command", 
+               new AjaxOptions {HttpMethod="Get"})
+   <br /><br />
+  <div id="messagebox"></div>
+</div>

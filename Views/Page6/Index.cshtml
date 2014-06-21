@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Page6";
+}
+
+@section header{
+    <script src="@Url.Content("~/Scripts/jquery.signalR-0.5.3.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/zApplication6.js")" type="text/javascript"></script>
+}
+
+<h2>PersistentConnection</h2>
+
+<div>
+  <input type="text" id="msg" />
+  <input type="button" id="broadcast" value="broadcast" />
+  <br /><br />
+  <div>
+    <fieldset>
+      <legend>MesageBox</legend>
+      <ul id="messages"></ul>
+    </fieldset>
+  </div> 
+</div>

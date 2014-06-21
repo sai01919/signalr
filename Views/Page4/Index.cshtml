@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "Page4";
+}
+
+@section header{
+    <script src="@Url.Content("~/Scripts/jquery.signalR-0.5.3.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/signalr/hubs")" type="text/javascript"></script>    
+    <script src="@Url.Content("~/Scripts/zApplication4.js")" type="text/javascript"></script>
+}
+
+<h2>ProgressBar</h2>
+
+<div>
+  @Ajax.ActionLink("Start progress-1 (by controller/action method)",
+            "Command", new AjaxOptions {HttpMethod="Get"})
+  &nbsp;&nbsp;
+  <a id="startprogress2" href="#">Start progress-2 (by hub method)</a>
+  <br /><br />
+  <div id="progressbar"></div>
+</div>

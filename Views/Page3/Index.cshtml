@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "Page3";
+}
+
+@section header{
+    <script src="@Url.Content("~/Scripts/jquery.signalR-0.5.3.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/signalr/hubs")" type="text/javascript"></script>    
+    <script src="@Url.Content("~/Scripts/zApplication3.js")" type="text/javascript"></script>
+}
+
+<h2>MultiHub</h2>
+
+<div>
+  Ajax command: @Ajax.ActionLink("Command (by controller/action method)",
+           "Command", new AjaxOptions {HttpMethod="Get"})
+  <br /><br />
+  <input type="text" id="msg" />
+  <input type="button" id="broadcast1" value="broadcast1 (by hub1)" />
+  <input type="button" id="broadcast2" value="broadcast2 (by hub2)" />
+  <br /><br />
+  <div>
+    <div style="float:left;width:400px">
+      <fieldset>
+        <legend>MesageBox-1</legend>
+        <ul id="messages1"></ul>
+      </fieldset>
+    </div>
+    <div style="float:left;width:400px">
+      <fieldset>
+        <legend>MesageBox-2</legend>
+        <ul id="messages2"></ul>
+      </fieldset>
+    </div>
+    <div style="clear:both"></div>
+  </div>  
+</div>
