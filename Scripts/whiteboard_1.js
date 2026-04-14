@@ -193,6 +193,22 @@ function UpdatePlayback(drawObject)
  }
 $(document).ready(function () {
 
+    if (!Modernizr.canvas) {
+        document.getElementById('tableWhiteBoard').style.display = "none";
+        var msg = document.createElement('p');
+        msg.textContent = "Please use a browser which supports HTML5. IE8+, Chrome or Firefox 4.0+.";
+        document.body.appendChild(msg);
+        alert("This browser does not support HTML5. Try with higher version.");
+        return;
+    }
+
+    $("#imgline").click(function (e) { e.preventDefault(); SelectTool('line'); });
+    $("#imgpencil").click(function (e) { e.preventDefault(); SelectTool('pencil'); });
+    $("#imgrect").click(function (e) { e.preventDefault(); SelectTool('rect'); });
+    $("#imgtext").click(function (e) { e.preventDefault(); SelectTool('text'); });
+    $("#imgerase").click(function (e) { e.preventDefault(); SelectTool('erase'); });
+    $("#imgSave").click(function (e) { e.preventDefault(); SaveDrawings(); });
+
     JoinHub();
     $("#userName").val("");
     $("#dialog-form").dialog({ autoOpen: false, width: 350, modal: true, closeOnEscape: false });
